@@ -53,6 +53,7 @@ import app.aaps.core.nssdk.remotemodel.LastModified
 import app.aaps.core.ui.compose.icons.IcPluginNsClient
 import app.aaps.core.ui.compose.preference.PreferenceSubScreenDef
 import app.aaps.plugins.sync.R
+import app.aaps.plugins.sync.nsclientV3.clientcontrol.ClientControlReceiver
 import app.aaps.plugins.sync.nsclientV3.compose.NSClientComposeContent
 import app.aaps.plugins.sync.nsclientV3.extensions.toNSBolus
 import app.aaps.plugins.sync.nsclientV3.extensions.toNSBolusWizard
@@ -85,9 +86,13 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.cancel
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.drop
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.isActive
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.encodeToJsonElement
@@ -115,6 +120,7 @@ class NSClientV3Plugin @Inject constructor(
     private val uel: UserEntryLogger,
     private val activePlugin: ActivePlugin,
     private val runningConfigurationPublisher: RunningConfigurationPublisher,
+    private val clientControlReceiver: ClientControlReceiver,
 ) : NsClient, Sync, PluginBaseWithPreferences(
     PluginDescription()
         .mainType(PluginType.SYNC)
@@ -143,6 +149,7 @@ class NSClientV3Plugin @Inject constructor(
     companion object {
 
         const val RECORDS_TO_LOAD = 500
+        private const val CLIENT_CONTROL_POLL_MS = 30_000L
     }
 
     private var scope = CoroutineScope(Dispatchers.IO + SupervisorJob())
@@ -219,6 +226,21 @@ class NSClientV3Plugin @Inject constructor(
         receiverDelegate.grabReceiversState()
         scope = CoroutineScope(Dispatchers.IO + SupervisorJob())
         runningConfigurationPublisher.start(scope)
+        // Master-side: poll inbound client-control envelopes (hello + future commands).
+        // Reactive to the toggle — enabling fires up the loop immediately, disabling cancels it
+        // via collectLatest cancelling the previous emission's body. Bound to the plugin's scope
+        // so it also stops cleanly on plugin disable / app exit.
+        scope.launch {
+            preferences.observe(BooleanKey.NsClientAllowClientControl)
+                .collectLatest { enabled ->
+                    if (!enabled) return@collectLatest
+                    while (isActive) {
+                        runCatching { clientControlReceiver.processPendingHellos() }
+                            .onFailure { aapsLogger.error(LTag.NSCLIENT, "ClientControl poll failed: ${it.message}", it) }
+                        delay(CLIENT_CONTROL_POLL_MS)
+                    }
+                }
+        }
         rxBus.toFlow(EventAppExit::class.java)
             .onEach {
                 stopService()
