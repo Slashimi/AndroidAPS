@@ -620,6 +620,9 @@
     <string name="missing_profile_name">Nom de profil manquant</string>
     <string name="profile_not_saved_activate">Profil non enregistré. Veuillez enregistrer le profil avant de l\'activer.</string>
     <string name="profile_activation_failed">L\'activation du profil a échoué</string>
+    <string name="profile_switch_save_failed">Le changement de profil n\'a pas pu être enregistré. Veuillez réessayer.</string>
+    <string name="profile_basal_not_compatible_with_pump">Le débit de base n\'est pas compatible avec la pompe actuelle et ne peut pas être activé. Réduisez le pourcentage ou ajustez le débit de basel.</string>
+    <string name="profile_pump_incompatible_label">Limite de la pompe</string>
     <string name="error_in_ic_values">Erreur dans les valeurs de G/I</string>
     <string name="error_in_isf_values">Erreur dans les valeurs de SI</string>
     <string name="error_in_basal_values">Erreur dans les valeurs de basal</string>
