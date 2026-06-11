@@ -620,6 +620,9 @@
     <string name="missing_profile_name">Няма име на профила</string>
     <string name="profile_not_saved_activate">Профила не е запазен. Моля съхранете го преди активация.</string>
     <string name="profile_activation_failed">Активацията неуспешна</string>
+    <string name="profile_switch_save_failed">Не мога да направя смяна на профил. Опитайте отново.</string>
+    <string name="profile_basal_not_compatible_with_pump">Базалът не се поддържа от помпата. Намалете процента или стойността на базала.</string>
+    <string name="profile_pump_incompatible_label">Лимит на помпата</string>
     <string name="error_in_ic_values">Грешка в стойностите на инс/въгл</string>
     <string name="error_in_isf_values">Грешка в стойностите на чувствителност ISF</string>
     <string name="error_in_basal_values">Грешка в базалите</string>
@@ -833,6 +836,7 @@
     <string name="clear_cloud_action">Изчисти настройките</string>
     <string name="clear_cloud_settings">Изчисти настройките на клауд</string>
     <string name="clear_cloud_settings_message">Това ще превключи към локалната база. Продължаваме ли?</string>
+    <string name="cloud_revoke_incomplete">Клауд настройките изтрити, но не мога да се свържа с акаунта за да премахна настройките там. Ще трбва да ги изтриете ръчно.</string>
     <string name="cloud_connection_failed">Неуспешна връзка с клауда</string>
     <string name="cloud_reauthorize_message">Неуспешна връзка с клауда. Да опитаме с друга парола?</string>
     <string name="reauthorize">Нова оторизация</string>
