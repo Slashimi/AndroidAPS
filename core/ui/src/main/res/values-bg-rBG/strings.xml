@@ -676,7 +676,7 @@
     <string name="cobvsiob">COB срещу IOB</string>
     <string name="slowabsorptiondetected_plain">!!!!! Засечено бавно усвояване на въглехидрати: %1$d%% от времето. Проверете калкулацията. Въглехидратите може би са прекалено много и това ще доведе до много инсулин !!!!!</string>
     <string name="bolus_constraint_applied_warn">Приложено болус ограничение: %1$.2f Е към %2$.2f Е</string>
-    <string name="bolus_recorded_only">Болусът ще бъде само записан (без да е доставен чрез помпата)</string>
+    <string name="bolus_recorded_only">Само запиши (без да да го стартираш в помпата)</string>
     <string name="advisoralarm">Аларма, когато е време за хранене</string>
     <string name="wizard_bg_label">КЗ</string>
     <string name="wizard_correction">Корекция</string>
@@ -961,7 +961,7 @@
     <string name="clear">Изчисти</string>
     <string name="search_category_categories">Категории</string>
     <string name="search_category_preferences">Опции</string>
-    <string name="search_category_dialogs">Диалози</string>
+    <string name="search_category_dialogs">Менюта</string>
     <string name="search_category_plugins">Плъгини</string>
     <string name="search_category_wiki">Документация</string>
     <string name="wiki_search_offline">Търсенето в документацията изисква интернет</string>
