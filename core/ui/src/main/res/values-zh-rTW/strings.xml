@@ -620,6 +620,9 @@
     <string name="missing_profile_name">缺少設定檔名稱</string>
     <string name="profile_not_saved_activate">設定檔未儲存。請先儲存設定檔再啟用。</string>
     <string name="profile_activation_failed">設定檔啟用失敗</string>
+    <string name="profile_switch_save_failed">設定檔切換無法儲存。請再試一次。</string>
+    <string name="profile_basal_not_compatible_with_pump">基礎率與目前的幫浦不相容，因此無法啟用。請降低百分比，或調整基礎率。</string>
+    <string name="profile_pump_incompatible_label">幫浦限制</string>
     <string name="error_in_ic_values">IC 數值錯誤</string>
     <string name="error_in_isf_values">ISF 數值錯誤</string>
     <string name="error_in_basal_values">基礎率數值錯誤</string>
