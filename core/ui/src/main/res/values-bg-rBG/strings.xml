@@ -160,7 +160,7 @@
     <string name="cgm">CGM</string>
     <string name="alarminxmin">Аларма след %1$d мин</string>
     <string name="treatmentdeliveryerror">Помпата върна грешка. Проверете ръчно за реално доставените инсулин и въглехидрати</string>
-    <string name="bolus_reminder">Напомни ми за болус когато КЗ се върне</string>
+    <string name="bolus_reminder">Напомни ми за болус когато КЗ е нормална</string>
     <string name="duration_label">Продължителност</string>
     <string name="shortgramm">гр.</string>
     <string name="pumpsuspended">Помпата е спряна</string>
