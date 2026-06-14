@@ -68,6 +68,7 @@
     <string name="configbuilder_insulin">Inzulín</string>
     <string name="configbuilder_bgsource">Zdroj glykémie</string>
     <string name="configbuilder_smoothing">Vyhladzovanie</string>
+    <string name="configbuilder_calibration">Kalibrácia</string>
     <string name="configbuilder_pump">Pumpa</string>
     <string name="configbuilder_sensitivity">Detekcia citlivosti</string>
     <string name="configbuilder_aps">APS</string>
@@ -453,6 +454,8 @@
     <string name="location_front_left_lower_abdomen">Predná strana brucha vľavo dole</string>
     <string name="location_back_right_buttock">Pravá strana bedier</string>
     <string name="location_back_left_buttock">Ľavá strana bedier</string>
+    <string name="location_back_right_lower_back">Pravá spodná časť chrbta</string>
+    <string name="location_back_left_lower_back">Ľavá spodná časť chrbta</string>
     <string name="location_side_right_upper_thigh">Vonkajšia strana stehna vpravo hore</string>
     <string name="location_side_left_upper_thigh">Vonkajšia strana stehna vľavo hore</string>
     <string name="location_side_right_lower_thigh">Vonkajšia strana stehna vpravo dole</string>
@@ -535,6 +538,7 @@
     <string name="uel_tt_ns_refresh">OBNOVENIE DOČASNÝCH CIEĽOV Z NS</string>
     <string name="uel_automation_removed">AUTOMATIZÁCIA ODSTRÁNENÁ</string>
     <string name="uel_bg_removed">GLYKÉMIA ODSTRÁNENÁ</string>
+    <string name="uel_calibration_removed">KALIBRÁCIA ODSTRÁNENÁ</string>
     <string name="uel_careportal_removed">OŠETRENIA BOLI ODSTRÁNENÉ</string>
     <string name="uel_bolus_removed">BOLUS ODSTRÁNENÝ</string>
     <string name="uel_carbs_removed">SACHARIDY ODSTRÁNENÉ</string>
@@ -616,6 +620,9 @@
     <string name="missing_profile_name">Chýba názov profilu</string>
     <string name="profile_not_saved_activate">Profil nebol uložený. Pred aktiváciou, prosím, uložte profil.</string>
     <string name="profile_activation_failed">Aktivácie profilu zlyhala</string>
+    <string name="profile_switch_save_failed">Prepnutie profilu nemohlo byť uložené. Prosím skúste to znovu.</string>
+    <string name="profile_basal_not_compatible_with_pump">Bazál nie je kompatibilný s aktuálnou pumpou a nemôže byť aktivovaný. Zníž percento, alebo prispôsob bazál.</string>
+    <string name="profile_pump_incompatible_label">Limit pumpy</string>
     <string name="error_in_ic_values">Chyba v hodnotách inz./sach. prevodu</string>
     <string name="error_in_isf_values">Chyba v hodnotách citlivosti</string>
     <string name="error_in_basal_values">Chyba v hodnotách bazálu</string>
@@ -829,6 +836,7 @@
     <string name="clear_cloud_action">Vymazať nastavenia</string>
     <string name="clear_cloud_settings">Vymazať nastavenia cloudu</string>
     <string name="clear_cloud_settings_message">Táto voľba prepne na lokálne úložisko a vymaže udelené oprávnenia. Pokračovať?</string>
+    <string name="cloud_revoke_incomplete">Nastavenie cloudu na tomto zariadení vymazané, ale účet nebol prístupný, pre úplné zrušenie prístupu. Možno ho budete chcieť odstrániť manuálne v nastaveniach vášho účtu.</string>
     <string name="cloud_connection_failed">Pripojenie ku cloudovému úložisku zlyhalo</string>
     <string name="cloud_reauthorize_message">Pripojenie ku cloudovému úložisku zlyhalo. Chcete sa znovu overiť?</string>
     <string name="reauthorize">Znovu overiť</string>
