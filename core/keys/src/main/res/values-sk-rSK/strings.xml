@@ -223,6 +223,8 @@
     <string name="pref_title_sms_remote_bolus_distance">Minimálna vzdialenosť pre bolus na diaľku</string>
     <!-- IntKey: BG Source preferences -->
     <string name="pref_title_random_bg_interval">Interval náhodnej glykémie</string>
+    <string name="pref_title_random_bg_randomize">Náhodné dáta glykémie</string>
+    <string name="pref_summary_random_bg_randomize">Pridať šum, čas jitteru, náhodné trendové šípky a náhodné sacharidy. Zakážte pre čistú deterministickú sinusovú vlnu so šipkou trendu odvodenú od sínusovej krivky.</string>
     <!-- IntKey: NS Client preferences -->
     <string name="pref_title_alarm_stale_data">Prahová hodnota alarmu pre zastaralé dáta</string>
     <string name="pref_title_urgent_alarm_stale_data">Prahová hodnota naliehavého alarmu pre zastaralé dáta</string>
